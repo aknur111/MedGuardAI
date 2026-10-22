@@ -1,0 +1,75 @@
+@startuml
+' MedGuard use case diagram (editable source). SVG/PNG in this folder are the rendered version.
+left to right direction
+skinparam shadowing false
+skinparam usecase { BackgroundColor #FFFFFF BorderColor #6B1E3A }
+skinparam actor { BorderColor #4A4650 }
+
+actor Patient
+actor Doctor
+actor Administrator
+actor "Telegram bot" as TG
+
+rectangle "MedGuard web application" {
+  usecase "UC-01\nLog in and log out\n(Must)" as UC01
+  usecase "UC-02\nCreate patient profile\n(Must)" as UC02
+  usecase "UC-03\nEnter and edit own medical history\n(Must)" as UC03
+  usecase "UC-04\nBrowse free time slots\n(Must)" as UC04
+  usecase "UC-05\nBook or cancel an appointment\n(Must)" as UC05
+  usecase "UC-06\nView medication schedule\n(Must)" as UC06
+  usecase "UC-07\nReceive dose reminders\n(Should)" as UC07
+  usecase "UC-08\nAsk the chatbot\n(Could)" as UC08
+  usecase "UC-09\nPublish availability slots\n(Must)" as UC09
+  usecase "UC-10\nView appointments and patient list\n(Must)" as UC10
+  usecase "UC-11\nOpen patient history\n(Must)" as UC11
+  usecase "UC-12\nReview patient-reported history\n(Should)" as UC12
+  usecase "UC-13\nRecord visit in free text\n(Must)" as UC13
+  usecase "UC-14\nConfirm extracted entities\n(Must)" as UC14
+  usecase "UC-15\nSearch drug\n(Must)" as UC15
+  usecase "UC-16\nRun medication safety check\n(Must)" as UC16
+  usecase "UC-17\nView explanation and source\n(Must)" as UC17
+  usecase "UC-18\nAccept risk with justification\n(Must)" as UC18
+  usecase "UC-19\nView safe alternatives\n(Should)" as UC19
+  usecase "UC-20\nGenerate and approve schedule\n(Must)" as UC20
+  usecase "UC-21\nExport prescription as PDF\n(Should)" as UC21
+  usecase "UC-22\nView clinics and usage statistics\n(Must)" as UC22
+  usecase "UC-23\nView doctors per clinic\n(Must)" as UC23
+  usecase "UC-24\nView login journal\n(Must)" as UC24
+  usecase "UC-25\nView event journal\n(Must)" as UC25
+  usecase "UC-26\nActivate or deactivate doctor account\n(Should)" as UC26
+  usecase "UC-27\nFill pre-visit questionnaire\n(Should)" as UC27
+}
+
+Patient -- UC01
+Patient -- UC02
+Patient -- UC03
+Patient -- UC05
+Patient -- UC06
+Patient -- UC07
+Patient -- UC08
+Patient -- UC27
+Doctor -- UC01
+Doctor -- UC09
+Doctor -- UC10
+Doctor -- UC11
+Doctor -- UC13
+Doctor -- UC15
+Doctor -- UC16
+Doctor -- UC20
+Doctor -- UC21
+Administrator -- UC01
+Administrator -- UC22
+Administrator -- UC23
+Administrator -- UC24
+Administrator -- UC25
+TG -- UC07
+TG -- UC27
+
+UC05 ..> UC04 : <<include>>
+UC13 ..> UC14 : <<include>>
+UC16 ..> UC17 : <<include>>
+UC12 ..> UC11 : <<extend>>
+UC18 ..> UC16 : <<extend>>
+UC19 ..> UC16 : <<extend>>
+UC26 ..> UC23 : <<extend>>
+@enduml
