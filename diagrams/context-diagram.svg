@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1180" viewBox="0 0 1800 1180" font-family="'Segoe UI', Arial, Helvetica, sans-serif">
+<defs><marker id="ar" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L12,6 L0,12 z" fill="#5A6472"/></marker></defs>
+<rect width="100%" height="100%" fill="#FFFFFF"/>
+<text x="40" y="52" font-size="30" font-weight="700" fill="#0B2239">System Context Diagram — MedGuard</text>
+<text x="40" y="84" font-size="18" fill="#5A6472">C4 model, level 1: the system, its three user roles and the external systems</text>
+<polyline points="430,310 700,500" fill="none" stroke="#5A6472" stroke-width="2.2" marker-end="url(#ar)"/>
+<polyline points="900,310 900,500" fill="none" stroke="#5A6472" stroke-width="2.2" marker-end="url(#ar)"/>
+<polyline points="1470,310 1100,500" fill="none" stroke="#5A6472" stroke-width="2.2" marker-end="url(#ar)"/>
+<polyline points="600,605 480,605" fill="none" stroke="#5A6472" stroke-width="2.2" marker-end="url(#ar)"/>
+<polyline points="330,520 330,310" fill="none" stroke="#5A6472" stroke-width="2.2" marker-end="url(#ar)"/>
+<polyline points="700,710 270,930" fill="none" stroke="#5A6472" stroke-width="2.2" marker-end="url(#ar)"/>
+<polyline points="820,710 680,930" fill="none" stroke="#5A6472" stroke-width="2.2" stroke-dasharray="9 6" marker-end="url(#ar)"/>
+<polyline points="980,710 1090,930" fill="none" stroke="#5A6472" stroke-width="2.2" stroke-dasharray="9 6" marker-end="url(#ar)"/>
+<polyline points="1100,710 1500,930" fill="none" stroke="#5A6472" stroke-width="2.2" stroke-dasharray="9 6" marker-end="url(#ar)"/>
+<circle cx="330.0" cy="154" r="34" fill="#08427B" stroke="#073B6F" stroke-width="2"/>
+<rect x="180.0" y="178" width="300" height="132" rx="28" fill="#08427B" stroke="#073B6F" stroke-width="2"/>
+<text x="330.0" y="216.0" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">Patient</text>
+<text x="330.0" y="238.0" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[Person]</text>
+<text x="330.0" y="267.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Keeps own history, books</text>
+<text x="330.0" y="290.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">visits, follows the schedule</text>
+<circle cx="900.0" cy="154" r="34" fill="#08427B" stroke="#073B6F" stroke-width="2"/>
+<rect x="750.0" y="178" width="300" height="132" rx="28" fill="#08427B" stroke="#073B6F" stroke-width="2"/>
+<text x="900.0" y="227.5" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">Doctor</text>
+<text x="900.0" y="249.5" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[Person]</text>
+<text x="900.0" y="278.5" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Clinic doctor of any specialty</text>
+<circle cx="1470.0" cy="154" r="34" fill="#08427B" stroke="#073B6F" stroke-width="2"/>
+<rect x="1320.0" y="178" width="300" height="132" rx="28" fill="#08427B" stroke="#073B6F" stroke-width="2"/>
+<text x="1470.0" y="216.0" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">Administrator</text>
+<text x="1470.0" y="238.0" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[Person]</text>
+<text x="1470.0" y="267.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Observes usage; no access to</text>
+<text x="1470.0" y="290.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">personal data</text>
+<rect x="600" y="500" width="600" height="210" rx="10" fill="#1168BD" stroke="#0B4884" stroke-width="2"/>
+<text x="900.0" y="565.5" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">MedGuard</text>
+<text x="900.0" y="587.5" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[Software System]</text>
+<text x="900.0" y="616.5" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Web application: patient history, appointment booking,</text>
+<text x="900.0" y="639.5" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">medication safety check with sources, intake schedule and</text>
+<text x="900.0" y="662.5" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">reminders</text>
+<rect x="180" y="520" width="300" height="170" rx="10" fill="#8C96A3" stroke="#6B7480" stroke-width="2"/>
+<text x="330.0" y="577.0" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">Telegram Bot API</text>
+<text x="330.0" y="599.0" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[External system]</text>
+<text x="330.0" y="628.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Delivers reminders,</text>
+<text x="330.0" y="651.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">questionnaire and bot replies</text>
+<rect x="105.0" y="930" width="330" height="150" rx="10" fill="#8C96A3" stroke="#6B7480" stroke-width="2"/>
+<text x="270.0" y="977.0" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">RxNorm / RxNav</text>
+<text x="270.0" y="999.0" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[NLM API]</text>
+<text x="270.0" y="1028.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Standard drug names and</text>
+<text x="270.0" y="1051.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">ingredients</text>
+<rect x="515.0" y="930" width="330" height="150" rx="10" fill="#8C96A3" stroke="#6B7480" stroke-width="2"/>
+<text x="680.0" y="977.0" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">openFDA Drug Label</text>
+<text x="680.0" y="999.0" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[FDA API]</text>
+<text x="680.0" y="1028.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Contraindications, warnings,</text>
+<text x="680.0" y="1051.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">interactions</text>
+<rect x="925.0" y="930" width="330" height="150" rx="10" fill="#8C96A3" stroke="#6B7480" stroke-width="2"/>
+<text x="1090.0" y="988.5" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">DailyMed</text>
+<text x="1090.0" y="1010.5" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[NLM]</text>
+<text x="1090.0" y="1039.5" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Official label (SPL) text</text>
+<rect x="1335.0" y="930" width="330" height="150" rx="10" fill="#8C96A3" stroke="#6B7480" stroke-width="2"/>
+<text x="1500.0" y="977.0" text-anchor="middle" font-size="22" font-weight="700" fill="#FFFFFF">DDInter 2.0</text>
+<text x="1500.0" y="999.0" text-anchor="middle" font-size="16" font-weight="400" fill="#FFFFFF">[Open DDI database]</text>
+<text x="1500.0" y="1028.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">Interaction, drug–disease,</text>
+<text x="1500.0" y="1051.0" text-anchor="middle" font-size="17" font-weight="400" fill="#FFFFFF">duplication records</text>
+<text x="490.0" y="381.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Creates profile, writes own</text>
+<text x="490.0" y="401.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">history, books appointments</text>
+<text x="490.0" y="421.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[HTTPS]</text>
+<text x="900.0" y="387.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Publishes free slots, reviews history,</text>
+<text x="900.0" y="407.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">checks prescriptions, approves schedules</text>
+<text x="900.0" y="427.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[HTTPS]</text>
+<text x="1380.0" y="381.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Views clinics, doctors, login</text>
+<text x="1380.0" y="401.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">and event journals</text>
+<text x="1380.0" y="421.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[HTTPS]</text>
+<text x="540.0" y="562.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Sends</text>
+<text x="540.0" y="582.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[Bot API]</text>
+<text x="316.0" y="406.0" text-anchor="end" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Reminders,</text>
+<text x="316.0" y="426.0" text-anchor="end" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">questionnaire, chat</text>
+<text x="403.5" y="822.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Normalises drug names</text>
+<text x="403.5" y="842.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[REST / JSON, cached]</text>
+<text x="723.0" y="822.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Label sections</text>
+<text x="723.0" y="842.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[loaded by team scripts]</text>
+<text x="1070.5" y="822.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Label text</text>
+<text x="1070.5" y="842.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[loaded by team scripts]</text>
+<text x="1380.0" y="822.0" text-anchor="middle" font-size="17" font-weight="600" fill="#2E3A48" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">Rule-base data</text>
+<text x="1380.0" y="842.0" text-anchor="middle" font-size="15" font-weight="400" fill="#5A6472" paint-order="stroke" stroke="#FFFFFF" stroke-width="6" stroke-linejoin="round">[loaded by team scripts]</text>
+<text x="40" y="1144" text-anchor="start" font-size="18" font-weight="700" fill="#0B2239">Legend:</text>
+<circle cx="144" cy="1126" r="7" fill="#08427B"/><rect x="132" y="1133" width="24" height="13" rx="6" fill="#08427B"/>
+<text x="170" y="1144" font-size="17" fill="#2E3A48">Person</text>
+<rect x="400" y="1128" width="28" height="20" rx="4" fill="#1168BD" stroke="#0B4884"/>
+<text x="440" y="1144" font-size="17" fill="#2E3A48">System in scope</text>
+<rect x="670" y="1128" width="28" height="20" rx="4" fill="#8C96A3" stroke="#6B7480"/>
+<text x="710" y="1144" font-size="17" fill="#2E3A48">External system</text>
+<line x1="926" y1="1138" x2="970" y2="1138" stroke="#5A6472" stroke-width="2.2" marker-end="url(#ar)"/>
+<text x="980" y="1144" font-size="17" fill="#2E3A48">Used at run time</text>
+<line x1="1196" y1="1138" x2="1240" y2="1138" stroke="#5A6472" stroke-width="2.2" stroke-dasharray="6 4" marker-end="url(#ar)"/>
+<text x="1250" y="1144" font-size="17" fill="#2E3A48">Loaded before run time</text>
+</svg>
