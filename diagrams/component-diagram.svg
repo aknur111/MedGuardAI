@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="2170" height="2060" viewBox="0 0 2170 2060" font-family="'Segoe UI', Arial, Helvetica, sans-serif">
 <defs><marker id="ar" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="18" markerHeight="18" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L12,6 L0,12 z" fill="#5A6472"/></marker></defs>
 <rect width="100%" height="100%" fill="#FFFFFF"/>
-<text x="40" y="52" font-size="30" font-weight="700" fill="#0B2239">Component Diagram (draft) — MedGuard</text>
+<text x="40" y="52" font-size="30" font-weight="700" fill="#0B2239">MedGuard: Component Diagram (draft)</text>
 <text x="40" y="84" font-size="18" fill="#5A6472">C4 model, level 3: components inside the MedGuard containers and their main interactions</text>
 <rect x="70" y="285" width="1740" height="610" rx="14" fill="none" stroke="#7A8594" stroke-width="2" stroke-dasharray="10 6"/>
 <text x="1794" y="863" text-anchor="end" font-size="20" font-weight="700" fill="#2E3A48">API Application</text>
@@ -54,7 +54,7 @@
 <text x="1370.0" y="183.0" text-anchor="middle" font-size="21" font-weight="700" fill="#FFFFFF">Administrator Dashboard</text>
 <text x="1370.0" y="204.0" text-anchor="middle" font-size="15" font-weight="400" fill="#FFFFFF">[Container: React, read-only]</text>
 <rect x="100" y="315" width="1680" height="80" rx="10" fill="#85BBF0" stroke="#5D9BD6" stroke-width="2"/>
-<text x="940.0" y="353.0" text-anchor="middle" font-size="21" font-weight="700" fill="#0B2239">API Layer — REST routers + Auth &amp; RBAC middleware</text>
+<text x="940.0" y="353.0" text-anchor="middle" font-size="21" font-weight="700" fill="#0B2239">API Layer: REST routers + Auth &amp; RBAC middleware</text>
 <text x="940.0" y="374.0" text-anchor="middle" font-size="15" font-weight="400" fill="#0B2239">[Component: FastAPI, JWT; three roles: Doctor, Patient, Administrator]</text>
 <rect x="74.0" y="440" width="272" height="120" rx="10" fill="#85BBF0" stroke="#5D9BD6" stroke-width="2"/>
 <text x="210.0" y="473.0" text-anchor="middle" font-size="21" font-weight="700" fill="#0B2239">Profile &amp; History</text>
