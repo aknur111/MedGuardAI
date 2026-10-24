@@ -20,7 +20,7 @@
 
 Medication safety requires checking current medicines, allergies, chronic conditions, and medical history. Information may be incomplete or stored in free-text notes. MedGuard aims to help physicians review this information, detect potential interactions and contraindications, and understand the evidence behind each warning.
 
-## 👥 User Roles
+## User Roles
 
 | Role | Planned capabilities | Access restrictions |
 |---|---|---|
@@ -28,7 +28,7 @@ Medication safety requires checking current medicines, allergies, chronic condit
 | **Patient** | Create a profile; enter medical history; book or cancel appointments; answer pre-visit questions; view approved schedules; receive Telegram reminders | Cannot access other patients' information or physician-only alerts |
 | **Administrator** | View clinic counts, doctors by clinic, login and event journals; activate or deactivate doctor accounts | Cannot access patient personal or clinical data, import records, or edit medication rules |
 
-## ⚙️ Planned Features
+## Planned Features
 
 ### Patient history and appointments
 
