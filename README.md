@@ -109,22 +109,35 @@ These are **planned choices**, not a claim that every component is implemented.
 
 **Academic Supervisor:** Orazova Arailym Zhanbolatkyzy — Astana IT University
 
-## Documentation and Design
 
-The following are **repository-relative links** to named project files. If a file is renamed or moved, update its link here.
+## 📂 Documentation and Design
 
-| Material | Link |
-|---|---|
-| Section 1 — Project Proposal | [Project Proposal](docs/01-project-proposal.docx) |
-| Section 4 — Existing System Comparison | [Existing System Comparison](docs/04-existing-system-comparison.docx) |
-| Section 5 — Technology Comparison | [Technology Comparison](docs/05-technology-comparison.docx) |
-| Section 6 — Requirements Specification | [Requirements Specification](docs/06-requirements-specification.docx) |
-| Section 7 — Use Case Catalogue | [Use Case Catalogue](docs/07-use-case-catalogue.md) |
-| Section 10 — Project Management and Risks | [Project Management and Risks](docs/10-project-management-risks.docx) |
-| Use Case Diagram | [Diagram image](diagrams/use-case-diagram.png) · [Editable PlantUML](diagrams/use-case-diagram.puml) |
-| UI Prototype | [Prototype PDF](prototype/MedGuard_UI_prototype.pdf) |
+The MedGuard diploma project documentation is organized into 11 sections.
 
-For other research, architecture, evaluation, and supervisor-feedback materials, browse the [documentation directory](docs/). Additional diagrams are in [diagrams/](diagrams/) and design materials in [prototype/](prototype/).
+| Section | Document | YouTrack |
+|---|---|---|
+| 1 | [Project Proposal](docs/01-project-proposal.docx) | [MED-3](https://medguard.youtrack.cloud/issue/MED-3) |
+| 2 | [Evidence of Relevance](docs/02-evidence-of-relevance.docx) | [MED-16](https://medguard.youtrack.cloud/issue/MED-16) |
+| 3 | [Literature Review](docs/03-literature-review.docx) | [MED-5](https://medguard.youtrack.cloud/issue/MED-5) |
+| 4 | [Existing System Comparison](docs/04-existing-system-comparison.docx) | [MED-6](https://medguard.youtrack.cloud/issue/MED-6) |
+| 5 | [Technology Comparison](docs/05-technology-comparison.docx) | [MED-7](https://medguard.youtrack.cloud/issue/MED-7) |
+| 6 | [Requirements Specification](docs/06-requirements-specification.docx) | [MED-8](https://medguard.youtrack.cloud/issue/MED-8) |
+| 7 | [Architecture and Diagrams](docs/07-context-and-component-diagrams.docx) | [MED-9](https://medguard.youtrack.cloud/issue/MED-9) |
+| 7.2 | [Use Case Diagram](docs/07-use-case-diagram.docx) | [MED-17](https://medguard.youtrack.cloud/issue/MED-17) |
+| 8 | [UI Prototype](prototype/MedGuard_UI_prototype.pdf) | [MED-18](https://medguard.youtrack.cloud/issue/MED-18) |
+| 9 | [Verification and Evaluation Plan](docs/09-verification-and-evaluation-plan.docx) | [MED-11](https://medguard.youtrack.cloud/issue/MED-11) |
+| 10 | [Project Management and Risks](docs/10-project-management-risks.docx) | [MED-14](https://medguard.youtrack.cloud/issue/MED-14) |
+| 11 | Supervisor Feedback (pending confirmation) | [MED-14](https://medguard.youtrack.cloud/issue/MED-14) |
+
+### Additional Project Materials
+
+- [Use Case Catalogue](docs/07-use-case-catalogue.md)
+- [Use Case Diagram](diagrams/use-case-diagram.png)
+- [Editable Use Case Diagram](diagrams/use-case-diagram.puml)
+- [System Architecture Diagrams](diagrams/)
+- [UI Prototype Materials](prototype/)
+- [Project Documentation](docs/)
+
 
 ## Project Management and Git Workflow
 
