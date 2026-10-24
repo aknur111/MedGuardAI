@@ -1,405 +1,165 @@
-
 # MedGuard
 
 ### Intelligent Medication Safety Assessment System
 
-**Project Title:** Development of an Intelligent System for Medication Safety Assessment Based on Patient Medical History
-
+**Project Title:** Development of an Intelligent System for Medication Safety Assessment Based on Patient Medical History  
 **University:** Astana IT University  
 **Programme:** Software Engineering  
 **Project Type:** Diploma Project  
-**Status:** Analysis and Design
+**Status:** Documentation and design deliverables tracked in YouTrack; full application startup not yet verified
 
 ---
 
 ## Overview
 
-**MedGuard** is an intelligent web-based clinical decision-support system designed to assess medication-safety risks based on structured and unstructured patient medical history.
+**MedGuard** is a planned web-based clinical decision-support system for identifying medication-safety risks using structured and unstructured patient medical history. It combines NLP-assisted extraction, rule-based safety checks, evidence-linked explanations, appointment booking, physician-approved medication schedules, and Telegram-based reminders.
 
-The system combines:
-
-- Natural Language Processing (NLP)
-- Rule-based medication safety checks
-- Evidence-grounded AI explanations
-- Patient medical history management
-- Appointment scheduling and booking
-- Medication intake schedules
-- Telegram-based reminders and chatbot functionality
-
-MedGuard helps physicians identify potential medication-related risks while keeping final clinical decisions under the physician's control.
-
-> **Important:** MedGuard is a clinical decision-support tool. It does not autonomously diagnose patients or prescribe medications.
-
----
+> **Clinical safety:** MedGuard supports, but does not replace, physician judgment. It does not autonomously diagnose or prescribe medication.
 
 ## Problem Statement
 
-Medication safety assessment requires physicians to consider multiple factors:
+Medication safety requires checking current medicines, allergies, chronic conditions, and medical history. Information may be incomplete or stored in free-text notes. MedGuard aims to help physicians review this information, detect potential interactions and contraindications, and understand the evidence behind each warning.
 
-- Current medications
-- Drug allergies
-- Chronic conditions
-- Previous medical history
-- Potential drug interactions
-- Duplicate therapies
+## 👥 User Roles
 
-Medical information may be incomplete, distributed across different records, or stored as unstructured text.
+| Role | Planned capabilities | Access restrictions |
+|---|---|---|
+| **Doctor** | Publish available slots; view patients within their clinic; record visits; confirm extracted information; check medication safety; review alerts; approve schedules | Cannot access patients of another clinic or alter audit journals |
+| **Patient** | Create a profile; enter medical history; book or cancel appointments; answer pre-visit questions; view approved schedules; receive Telegram reminders | Cannot access other patients' information or physician-only alerts |
+| **Administrator** | View clinic counts, doctors by clinic, login and event journals; activate or deactivate doctor accounts | Cannot access patient personal or clinical data, import records, or edit medication rules |
 
-**MedGuard aims to solve this problem** by integrating medical history analysis, medication safety rules, and evidence-linked explanations into one web application.
+## ⚙️ Planned Features
 
----
+### Patient history and appointments
 
-## Target Users
+- Patients create profiles and record conditions, allergies, medicines, and medical history.
+- Doctors review patient-reported information and confirm or reject extracted entities.
+- Doctors publish free appointment slots; patients browse, book, or cancel them.
 
-MedGuard supports **three user roles**.
+### Medication safety assessment
 
-### 1. Doctor
+| Check | Purpose | Requirement |
+|---|---|---|
+| Drug–drug interactions | Detect potentially dangerous combinations | FR-22 |
+| Drug–allergy conflicts | Check recorded allergies and relevant class cross-reactivity | FR-23 |
+| Drug–disease contraindications | Check medicines against recorded conditions | FR-24 |
+| Duplicate therapy | Detect duplicate ingredients or therapeutic classes | FR-25 |
+| Dose-range check | Compare a proposed dose against available label ranges; does not calculate a new prescription | FR-26 (Should) |
 
-Doctors can:
+Alerts have **Critical**, **Review**, or **Informational** levels, with relevant patient factors and cited evidence. The doctor makes the final decision.
 
-- View patient medical histories within their clinic
-- Publish available appointment slots
-- View scheduled appointments
-- Record patient visits
-- Review and confirm extracted medical information
-- Check medications for potential safety risks
-- View evidence-based alerts and explanations
-- Accept risks with justification
-- Generate and approve medication schedules
+### Medication schedules and Telegram
 
-### 2. Patient
+- The system generates an intake schedule from a physician-approved regimen; the doctor reviews and approves it.
+- The patient can view the approved schedule.
+- Planned Telegram functionality includes dose reminders, appointment notifications, pre-visit questionnaires, and schedule-related chatbot assistance.
+- The chatbot does not diagnose or change prescriptions.
 
-Patients can:
+### AI and NLP
 
-- Create and manage their profiles
-- Enter and update their medical histories
-- Browse available appointment slots
-- Book or cancel appointments
-- Complete pre-visit questionnaires
-- View physician-approved medication schedules
-- Receive Telegram reminders
-- Interact with the Telegram chatbot
+The planned NLP component extracts conditions, allergies, medicines, doses, and observations from clinical notes. Extracted entities require physician confirmation before use. A locally served language model may explain rule-based alerts using retrieved evidence, but it cannot create or remove alerts.
 
-### 3. Administrator
-
-Administrators can:
-
-- View the number of clinics using MedGuard
-- View doctors associated with each clinic
-- View aggregated usage statistics
-- Access login and event journals
-- Activate or deactivate doctor accounts
-
-**Access restrictions:**
-
-Administrators cannot:
-
-- Access patient medical histories
-- View personal or clinical patient data
-- Modify medical records
-- Edit medication safety rules
-- Import patient records
-
----
-
-## Core Features
-
-### 1. Patient Medical History Management
-
-Patients enter their medical information, including:
-
-- Chronic conditions
-- Allergies
-- Current medications
-- Previous illnesses and operations
-- Additional medical remarks
-
-Doctors can review, confirm, correct, or reject patient-reported information.
-
-### 2. Appointment Booking
-
-- Doctors publish available appointment slots.
-- Patients filter slots by clinic, specialty, doctor, and date.
-- Patients book or cancel appointments.
-- Booked slots become unavailable to other patients.
-
-### 3. Medication Safety Assessment
-
-MedGuard checks proposed medications for:
-
-| Check Type | Description |
-|---|---|
-| Drug–Drug Interactions | Detects potentially dangerous medication combinations |
-| Drug–Allergy Conflicts | Identifies conflicts with recorded allergies |
-| Drug–Disease Contraindications | Checks medications against existing conditions |
-| Duplicate Therapy | Detects duplicate active ingredients or drug classes |
-| Dose Range Check | Compares prescribed doses with available reference ranges |
-
-### 4. Explainable Safety Alerts
-
-Medication safety results are classified into three levels:
-
-| Risk Level | Description |
-|---|---|
-| Critical | Potentially dangerous medication-related risk |
-| Review | Requires additional physician attention |
-| Informational | No significant risk identified by the applicable checks |
-
-Each alert includes:
-
-- Risk level
-- Conflicting medications or patient factors
-- Explanation of the potential risk
-- Recommended action
-- Supporting evidence and source references
-
-The final decision always belongs to the physician.
-
-### 5. Medication Schedule Generation
-
-MedGuard generates medication intake schedules based on physician-approved prescriptions.
-
-Schedules may include:
-
-- Medication name
-- Dosage
-- Intake time
-- Frequency
-- Course duration
-- Instructions related to meals
-
-Doctors review and approve schedules before patients can access them.
-
-### 6. Telegram Integration
-
-Telegram functionality includes:
-
-- Medication reminders
-- Appointment notifications
-- Pre-visit questionnaires
-- Medication intake confirmation
-- Chatbot assistance with medication schedules
-
-The chatbot does not diagnose patients or independently modify prescriptions.
-
----
-
-## AI and NLP
-
-MedGuard uses AI-assisted processing to extract structured medical information from clinical notes.
-
-The NLP module identifies:
-
-- Medical conditions
-- Allergies
-- Medications
-- Dosages and frequencies
-- Relevant medical observations
-
-Extracted information must be confirmed by the doctor before it is used in medication safety checks.
-
-### Evidence-Grounded Explanations
-
-The system uses Retrieval-Augmented Generation (RAG) to produce explanations supported by medical references.
-
-**Safety principle:** The language model cannot independently create, modify, or remove medication safety alerts.
-
----
-
-## Planned Technology Stack
+## 🛠️ Planned Technology Stack
 
 | Component | Technology |
 |---|---|
 | Frontend | React, Next.js, TypeScript |
 | Backend | Python, FastAPI |
-| Database | PostgreSQL |
-| Vector Search | pgvector |
-| AI/NLP | Locally hosted open-weight LLM |
-| Evidence Retrieval | RAG |
-| Drug Information | RxNorm/RxNav, DDInter 2.0, openFDA, DailyMed |
-| Background Jobs | Celery, Redis |
+| Database | PostgreSQL, pgvector |
+| AI / NLP | Locally hosted open-weight model, RAG |
+| Drug information | RxNorm/RxNav, DDInter 2.0, openFDA, DailyMed |
+| Background jobs | Celery, Redis |
 | Notifications | Telegram Bot API |
 | Deployment | Docker Compose |
-| Version Control | Git, GitHub |
-| Project Management | YouTrack |
+| Version control | Git, GitHub |
+| Project management | YouTrack |
 
----
+These are **planned choices**, not a claim that every component is implemented.
 
-## Security and Privacy
+## 🔐 Security and Data Privacy
 
-MedGuard follows privacy-focused design principles.
-
-- Only synthetic patient data are used during development and evaluation.
-- Synthetic records are generated using the team's own scripts.
-- Role-based access control restricts access to information.
-- Patients can access only their own medical information.
-- Doctors can access only patients associated with their clinic.
-- Administrators cannot access personal or clinical patient data.
-- Login and event journals use pseudonymous identifiers.
-- The language model is planned to run locally.
+- Development, demonstration, and evaluation use synthetic patient records generated by team scripts.
+- Role-based access is intended to restrict patients to their own records and doctors to patients in their clinic.
+- Administrators are limited to aggregated statistics, doctor account status, and pseudonymous journals.
+- The language model is planned to run locally so patient text is not sent to external AI services.
 - Medical decisions remain under physician supervision.
 
----
+## 📋 Scope
 
-## Project Scope
+**In scope:** three-role web application, patient profiles and histories, appointment booking, medication safety checks, NLP extraction, evidence-based alerts, approved schedules, Telegram reminders, audit logging, synthetic data, and technical evaluation.
 
-### In Scope
+**Out of scope:** real patient data, production hospital-system integration, autonomous diagnosis or prescribing, administrator access to clinical records, editing safety rules through the administrator interface, and clinical-outcome studies.
 
-- Web application with three user roles
-- Patient profiles and medical histories
-- Appointment booking
-- Medication safety assessment
-- NLP-based medical information extraction
-- Evidence-based safety explanations
-- Medication schedule generation
-- Telegram reminders and chatbot
-- Audit logging
-- Synthetic patient database
-- Technical evaluation
+## 📊 Expected Outcomes
 
-### Out of Scope
+1. A working MedGuard web prototype with role-based access.
+2. Patient history and appointment workflows.
+3. A rule-based medication safety engine and evidence-linked explanations.
+4. Physician-approved medication schedules and Telegram integration.
+5. Reproducible evaluation using synthetic data.
+6. Technical and academic documentation.
 
-- Real patient data
-- Production hospital system integration
-- Autonomous diagnosis
-- Autonomous prescribing
-- Native mobile applications
-- Progressive Web App (PWA)
-- Administrator access to clinical records
-- Medication rule editing through the administrator interface
-- Synthea import as an application feature
-- Clinical-outcome studies
+## 👩‍💻 Team
 
----
-
-## Expected Outcomes
-
-The project aims to deliver:
-
-1. A working web-based MedGuard prototype.
-2. Role-based interfaces for Doctor, Patient, and Administrator.
-3. A medication safety rule engine.
-4. NLP-based medical information extraction.
-5. Evidence-grounded safety alerts.
-6. Physician-approved medication schedules.
-7. Telegram-based reminders and chatbot.
-8. A reproducible synthetic patient database.
-9. Technical evaluation results.
-10. Complete project documentation.
-
----
-
-## Development Team
-
-| Team Member | Responsibilities |
+| Member | Roles |
 |---|---|
 | **Yertay Altynay Talgatkyzy** | ML Engineer (Lead), Research Head, Backend Developer, Frontend Developer |
 | **Salemkan Aknur Seitkankyzy** | Head of Backend, DevOps, Business Analyst, UI/UX Designer, ML Developer |
 | **Nuraly Nuray Bakytzhankyzy** | Project Manager, Head of Frontend, QA Engineer, ML Developer |
 
-### Academic Supervisor
+**Academic Supervisor:** Orazova Arailym Zhanbolatkyzy — Astana IT University
 
-**Orazova Arailym Zhanbolatkyzy**
+## 📂 Documentation and Design
 
-Astana IT University
+The following are **repository-relative links** to named project files. If a file is renamed or moved, update its link here.
 
----
-
-## Project Documentation
-
-Project documentation is maintained in the `docs/` directory.
-
-| Section | Document |
+| Material | Link |
 |---|---|
-| 1 | Project Proposal |
-| 2 | Evidence of Relevance |
-| 3 | Literature Review |
-| 4 | Existing System Comparison |
-| 5 | Technology Comparison |
-| 6 | Requirements Specification |
-| 7 | System Architecture and Use Cases |
-| 8 | UX/UI Design |
-| 9 | Verification and Evaluation |
-| 10 | Project Management and Risks |
-| 11 | Supervisor Feedback |
+| Section 1 — Project Proposal | [Project Proposal](docs/01-project-proposal.docx) |
+| Section 4 — Existing System Comparison | [Existing System Comparison](docs/04-existing-system-comparison.docx) |
+| Section 5 — Technology Comparison | [Technology Comparison](docs/05-technology-comparison.docx) |
+| Section 6 — Requirements Specification | [Requirements Specification](docs/06-requirements-specification.docx) |
+| Section 7 — Use Case Catalogue | [Use Case Catalogue](docs/07-use-case-catalogue.md) |
+| Section 10 — Project Management and Risks | [Project Management and Risks](docs/10-project-management-risks.docx) |
+| Use Case Diagram | [Diagram image](diagrams/use-case-diagram.png) · [Editable PlantUML](diagrams/use-case-diagram.puml) |
+| UI Prototype | [Prototype PDF](prototype/MedGuard_UI_prototype.pdf) |
 
-Additional project materials include:
+For other research, architecture, evaluation, and supervisor-feedback materials, browse the [documentation directory](docs/). Additional diagrams are in [diagrams/](diagrams/) and design materials in [prototype/](prototype/).
 
-- `diagrams/` — System architecture and use case diagrams
-- `prototype/` — UI prototype and design materials
-- `docs/` — Academic and technical documentation
+## 📅 Project Management and Git Workflow
 
----
+**YouTrack:** [MedGuard project board](https://medguard.youtrack.cloud/projects/MED) · [Issue list](https://medguard.youtrack.cloud/issues) · [Submission task MED-14](https://medguard.youtrack.cloud/issue/MED-14)  
+**GitHub:** [MedGuardAI repository](https://github.com/aknur111/MedGuardAI)
 
-## Project Management
+The team uses task-specific branches, commits, and pull requests to organize changes. Reviews should be requested before merging. **Mandatory branch protection is not currently enabled**, so the workflow relies on team coordination rather than enforced approval checks.
 
-Project planning and task tracking are managed through **YouTrack**.
+## 🚀 Setup and Run Status
 
- **[MedGuard YouTrack Project](https://medguard.youtrack.cloud/projects/MED)**
+**As of 24 October 2026:** This README documents the intended architecture and design. A complete, verified application startup procedure has not yet been provided.
 
-Development workflow:
+- **Application startup:** Not yet documented or verified.
+- **Environment variables:** Configuration instructions will be added with the runnable implementation.
+- **Database initialization:** Not yet documented or verified.
+- **Docker Compose:** Planned deployment method; no working launch command is claimed here.
 
-1. Create a task in YouTrack.
-2. Assign an owner and acceptance criteria.
-3. Create a Git branch for the task.
-4. Implement the required changes.
-5. Open a Pull Request.
-6. Request a review from another team member.
-7. Merge approved changes.
+Once the application is runnable, this section should include prerequisites, environment configuration, startup commands, database setup, and troubleshooting steps.
 
----
+## 🧪 Testing and Evaluation
 
-## Setup and Installation
+Planned tests include unit and integration tests, role-based access tests, medication-safety rule validation, NLP extraction evaluation, explanation quality, performance, and usability testing. Only synthetic patient data will be used.
 
-> **Current status:** The project is in the analysis and design phase.
+**Current test command:** Not yet documented or verified.
 
-The application is not yet available as a fully runnable system.
+## 📌 Current Status
 
-Installation and configuration instructions will be added after implementation.
+**Phase:** Analysis and design, with documentation and prototypes under review. The repository contains project materials, but a complete runnable application has not been verified in this README.
 
-Planned deployment will use **Docker Compose**.
+## 📄 License and Sources
 
----
-
-## Testing and Evaluation
-
-The planned evaluation includes:
-
-- Unit testing
-- Integration testing
-- Medication safety rule validation
-- NLP extraction evaluation
-- AI explanation quality assessment
-- Security and access control testing
-- Usability testing
-- Performance testing
-
-Only synthetic patient data will be used for development, demonstration, and evaluation.
-
----
-
-## Current Project Status
-
-**Phase:** Analysis and Design
-
-Current activities include:
-
-- Requirements specification
-- Use case modelling
-- Architecture design
-- UI/UX prototyping
-- Technology selection
-- Project documentation
-- Planning of implementation and testing
-
----
-
-## License
-
-License information will be added after the team confirms the project's distribution terms.
-
-Third-party drug information sources are subject to their respective licenses and attribution requirements.
+A repository-wide license has not yet been confirmed. Third-party medication data and software remain subject to their respective license and attribution requirements.
 
 ---
 
 **MedGuard — Supporting safer medication decisions through explainable AI.**
+
+> **Submission note (24 October 2026):** The planned submission tag is `pre-defense-1`. The MED-14 issue description still refers to `prob-period-1`; confirm the final tag with the team before creating it.
